@@ -7,6 +7,7 @@ if(USE_THIRDPARTY_LIBRARIES)
   )
 else()
   find_package(civetweb CONFIG REQUIRED)
+  string(APPEND PKGCONFIG_LIBS " -lcivetweb-cpp -lcivetweb")
 
   # work-around https://github.com/civetweb/civetweb/pull/918
   if(WIN32 AND NOT TARGET WINSOCK::WINSOCK)
@@ -17,6 +18,7 @@ endif()
 
 if(ENABLE_COMPRESSION)
   find_package(ZLIB REQUIRED)
+  string(APPEND PKGCONFIG_REQUIRES " zlib")
 endif()
 
 add_library(pull
@@ -84,6 +86,19 @@ install(
   DIRECTORY include/ ${CMAKE_CURRENT_BINARY_DIR}/include/
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
+
+if(GENERATE_PKGCONFIG)
+  configure_file(
+    ${PROJECT_SOURCE_DIR}/cmake/prometheus-cpp-pull.pc.in
+    ${CMAKE_CURRENT_BINARY_DIR}/prometheus-cpp-pull.pc
+    @ONLY
+  )
+
+  install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/prometheus-cpp-pull.pc
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+  )
+endif()
 
 if(ENABLE_TESTING)
   add_library(pull_internal_headers INTERFACE)

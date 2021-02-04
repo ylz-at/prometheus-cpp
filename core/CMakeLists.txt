@@ -1,4 +1,3 @@
-
 add_library(core
   src/check_names.cc
   src/counter.cc
@@ -61,6 +60,23 @@ install(
   DIRECTORY include/ ${CMAKE_CURRENT_BINARY_DIR}/include/
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
+
+if(GENERATE_PKGCONFIG)
+  if(HAVE_CXX_LIBATOMIC)
+    string(PKGCONFIG_LIBATOMIC -latomic)
+  endif()
+
+  configure_file(
+    ${PROJECT_SOURCE_DIR}/cmake/prometheus-cpp-core.pc.in
+    ${CMAKE_CURRENT_BINARY_DIR}/prometheus-cpp-core.pc
+    @ONLY
+  )
+
+  install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/prometheus-cpp-core.pc
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+  )
+endif()
 
 if(ENABLE_TESTING)
   add_subdirectory(tests)

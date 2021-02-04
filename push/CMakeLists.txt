@@ -1,4 +1,3 @@
-
 find_package(CURL REQUIRED)
 
 add_library(push
@@ -48,6 +47,21 @@ install(
   DIRECTORY include/ ${CMAKE_CURRENT_BINARY_DIR}/include/
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
+
+if(GENERATE_PKGCONFIG)
+  string(APPEND PKGCONFIG_REQUIRES " libcurl")
+
+  configure_file(
+    ${PROJECT_SOURCE_DIR}/cmake/prometheus-cpp-push.pc.in
+    ${CMAKE_CURRENT_BINARY_DIR}/prometheus-cpp-push.pc
+    @ONLY
+  )
+
+  install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/prometheus-cpp-push.pc
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+  )
+endif()
 
 if(ENABLE_TESTING)
   add_subdirectory(tests)

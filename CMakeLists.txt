@@ -4,7 +4,11 @@ if(POLICY CMP0091)
   cmake_policy(SET CMP0091 NEW) # recognize CMAKE_MSVC_RUNTIME_LIBRARY
 endif()
 
-project(prometheus-cpp VERSION 0.12.1)
+project(prometheus-cpp
+  VERSION 0.12.1
+  DESCRIPTION "Prometheus Client Library for Modern C++"
+  HOMEPAGE_URL "https://github.com/jupp0r/prometheus-cpp"
+)
 
 include(GenerateExportHeader)
 include(GNUInstallDirs)
@@ -20,6 +24,7 @@ option(ENABLE_TESTING "Build tests" ON)
 option(USE_THIRDPARTY_LIBRARIES "Use 3rdParty submodules" ON)
 option(THIRDPARTY_CIVETWEB_WITH_SSL "Enable SSL support for embedded civetweb source code")
 option(OVERRIDE_CXX_STANDARD_FLAGS "Force building with -std=c++11 even if the CXXLFAGS are configured differently" ON)
+option(GENERATE_PKGCONFIG "Generate and install pkg-config files" ON)
 
 if(OVERRIDE_CXX_STANDARD_FLAGS)
   set(CMAKE_CXX_STANDARD 11)
@@ -121,8 +126,7 @@ install(
 
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
   set(CPACK_PACKAGE_CONTACT "prometheus-cpp@@noreply.github.com")
-  set(CPACK_PACKAGE_DESCRIPTION "C++ library for Prometheus exporters")
-  set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/jupp0r/prometheus-cpp")
+  set(CPACK_PACKAGE_DESCRIPTION "${PROJECT_DESCRIPTION}")
   set(CPACK_PACKAGE_RELOCATABLE OFF)
   set(CPACK_PACKAGE_VENDOR "The prometheus-cpp authors")
 
