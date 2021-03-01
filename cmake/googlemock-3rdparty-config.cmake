@@ -8,7 +8,7 @@ add_library(gmock_main STATIC EXCLUDE_FROM_ALL
   ${_IMPORT_PREFIX}/googlemock/src/gmock_main.cc
 )
 
-target_include_directories(gmock_main
+target_include_directories(gmock_main SYSTEM
   PUBLIC
     ${_IMPORT_PREFIX}/googletest/include
     ${_IMPORT_PREFIX}/googlemock/include
