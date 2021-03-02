@@ -2,8 +2,8 @@
 
 #include <algorithm>
 #include <chrono>
-#include <cstring>
 #include <cstddef>
+#include <cstring>
 #include <iterator>
 #include <string>
 
@@ -15,10 +15,10 @@
 #include "civetweb.h"
 #include "metrics_collector.h"
 #include "prometheus/counter.h"
-#include "prometheus/summary.h"
-#include "prometheus/serializer.h"
-#include "prometheus/text_serializer.h"
 #include "prometheus/metric_family.h"
+#include "prometheus/serializer.h"
+#include "prometheus/summary.h"
+#include "prometheus/text_serializer.h"
 
 namespace prometheus {
 namespace detail {

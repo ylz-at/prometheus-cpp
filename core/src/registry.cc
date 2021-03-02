@@ -6,10 +6,10 @@
 #include <tuple>
 
 #include "prometheus/counter.h"
+#include "prometheus/detail/future_std.h"
 #include "prometheus/gauge.h"
 #include "prometheus/histogram.h"
 #include "prometheus/summary.h"
-#include "prometheus/detail/future_std.h"
 
 namespace prometheus {
 

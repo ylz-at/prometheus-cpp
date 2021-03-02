@@ -3,9 +3,9 @@
 #include <gtest/gtest.h>
 
 #include <cmath>
-#include <thread>
 #include <limits>
 #include <memory>
+#include <thread>
 
 namespace prometheus {
 namespace {

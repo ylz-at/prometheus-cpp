@@ -6,9 +6,9 @@
 #include <memory>
 
 #include "prometheus/client_metric.h"
+#include "prometheus/counter.h"
 #include "prometheus/detail/future_std.h"
 #include "prometheus/histogram.h"
-#include "prometheus/counter.h" 
 
 namespace prometheus {
 namespace {

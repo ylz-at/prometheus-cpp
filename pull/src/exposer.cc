@@ -1,8 +1,8 @@
 #include "prometheus/exposer.h"
 
 #include <algorithm>
-#include <string>
 #include <iterator>
+#include <string>
 #include <utility>
 
 #include "CivetServer.h"

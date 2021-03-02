@@ -2,8 +2,8 @@
 
 #include <algorithm>
 #include <cmath>
-#include <memory>
 #include <limits>
+#include <memory>
 
 namespace prometheus {
 namespace detail {

@@ -7,11 +7,11 @@
 #include <limits>
 #include <string>
 
-#include "prometheus/histogram.h"
-#include "prometheus/summary.h"
-#include "prometheus/metric_family.h"
 #include "prometheus/client_metric.h"
-#include "prometheus/metric_type.h"  
+#include "prometheus/histogram.h"
+#include "prometheus/metric_family.h"
+#include "prometheus/metric_type.h"
+#include "prometheus/summary.h"
 
 namespace prometheus {
 namespace {

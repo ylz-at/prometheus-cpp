@@ -4,14 +4,14 @@
 #include <curl/curl.h>
 
 #include <algorithm>
+#include <iterator>
 #include <memory>
 #include <mutex>
 #include <sstream>
-#include <iterator>
 
 #include "prometheus/detail/future_std.h"
+#include "prometheus/metric_family.h"  // IWYU pragma: keep
 #include "prometheus/text_serializer.h"
-#include "prometheus/metric_family.h" // IWYU pragma: keep
 
 // IWYU pragma: no_include <system_error>
 // IWYU pragma: no_include <cxxabi.h>

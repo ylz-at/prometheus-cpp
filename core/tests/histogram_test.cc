@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 
 #include <limits>
-#include <memory>   
+#include <memory>
 #include <stdexcept>
 
 namespace prometheus {
