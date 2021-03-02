@@ -19,6 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get remove -y --purge man-db # avoid time-consuming trigger
+          sudo add-apt-repository ppa:gjasny/iwyu
           sudo apt-get update
           sudo apt-get install -y iwyu libbenchmark-dev libcurl4-openssl-dev ninja-build zlib1g-dev
 

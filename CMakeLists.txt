@@ -20,7 +20,7 @@ option(ENABLE_TESTING "Build tests" ON)
 option(USE_THIRDPARTY_LIBRARIES "Use 3rdParty submodules" ON)
 option(THIRDPARTY_CIVETWEB_WITH_SSL "Enable SSL support for embedded civetweb source code")
 option(OVERRIDE_CXX_STANDARD_FLAGS "Force building with -std=c++11 even if the CXXLFAGS are configured differently" ON)
-option(RUN_IWYU "Run include-what-you-use" ON)
+option(RUN_IWYU "Run include-what-you-use" OFF)
 
 if(OVERRIDE_CXX_STANDARD_FLAGS)
   set(CMAKE_CXX_STANDARD 11)
