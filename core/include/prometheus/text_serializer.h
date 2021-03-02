@@ -1,11 +1,9 @@
 #pragma once
 
 #include <iosfwd>
-#include <string>
 #include <vector>
 
 #include "prometheus/detail/core_export.h"
-#include "prometheus/metric_family.h"
 #include "prometheus/serializer.h"
 
 namespace prometheus {

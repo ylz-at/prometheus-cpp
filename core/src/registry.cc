@@ -1,11 +1,16 @@
 #include "prometheus/registry.h"
 
+#include <algorithm>
 #include <iterator>
+#include <stdexcept>
+#include <tuple>
 
+#include "prometheus/detail/builder.h"
 #include "prometheus/counter.h"
 #include "prometheus/gauge.h"
 #include "prometheus/histogram.h"
 #include "prometheus/summary.h"
+#include "prometheus/detail/future_std.h"
 
 namespace prometheus {
 

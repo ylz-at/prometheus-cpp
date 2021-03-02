@@ -5,9 +5,10 @@
 #include <vector>
 
 #include "prometheus/detail/core_export.h"
-#include "prometheus/metric_family.h"
 
 namespace prometheus {
+
+struct MetricFamily;
 
 class PROMETHEUS_CPP_CORE_EXPORT Serializer {
  public:
