@@ -4,6 +4,7 @@
 
 #include <cstddef>
 #include <vector>
+#include <numeric>
 
 #include "prometheus/counter.h"
 #include "prometheus/gauge.h"
