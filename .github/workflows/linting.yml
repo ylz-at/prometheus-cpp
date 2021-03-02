@@ -24,7 +24,7 @@ jobs:
           sudo apt-get install -y iwyu libbenchmark-dev libcurl4-openssl-dev ninja-build zlib1g-dev
 
       - name: "CMake Configure for Unix with vcpkg dependencies"
-        run: cmake -GNinja -S ${{ github.workspace }} -DRUN_IWYU=ON -B ${{ github.workspace }}/_build
+        run: cmake -GNinja -DRUN_IWYU=ON  -S ${{ github.workspace }} -B ${{ github.workspace }}/_build
 
       - name: Build
         run: cmake --build ${{ github.workspace }}/_build 2>&1 | tee ${{ github.workspace }}/output.txt
