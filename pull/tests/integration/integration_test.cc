@@ -1,14 +1,19 @@
 #include <curl/curl.h>
+#include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
+#include <cstddef>
+#include <stdexcept>
 #include <functional>
 #include <memory>
 #include <string>
+#include <vector>
 
 #include "prometheus/counter.h"
 #include "prometheus/detail/future_std.h"
 #include "prometheus/exposer.h"
 #include "prometheus/registry.h"
+#include "prometheus/family.h"
 
 namespace prometheus {
 namespace {

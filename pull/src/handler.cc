@@ -18,7 +18,6 @@
 #include "prometheus/summary.h"
 #include "prometheus/serializer.h"
 #include "prometheus/text_serializer.h"
-#include "prometheus/detail/builder.h"
 #include "prometheus/metric_family.h"
 
 namespace prometheus {
