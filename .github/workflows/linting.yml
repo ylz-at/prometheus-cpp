@@ -16,11 +16,11 @@ jobs:
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
-      - name: Install doxygen
+      - name: Install dependencies
         run: |
           sudo apt-get remove -y --purge man-db # avoid time-consuming trigger
           sudo apt-get update
-          sudo apt-get install -y iwyu ninja-build
+          sudo apt-get install -y iwyu libbenchmark-dev libcurl4-openssl-dev ninja-build zlib1g-dev
 
       - name: "CMake Configure for Unix with vcpkg dependencies"
         run: cmake -GNinja -S ${{ github.workspace }} -DRUN_IWYU=ON -B ${{ github.workspace }}/_build
