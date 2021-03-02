@@ -1,12 +1,17 @@
+#include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
 #include <memory>
 #include <sstream>
+#include <stdexcept>
+#include <string>
+#include <vector> 
 
 #include "prometheus/counter.h"
 #include "prometheus/detail/future_std.h"
 #include "prometheus/family.h"
 #include "prometheus/text_serializer.h"
+#include "prometheus/metric_family.h"
 #include "raii_locale.h"
 
 namespace prometheus {

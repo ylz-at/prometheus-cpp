@@ -5,7 +5,6 @@
 #include <stdexcept>
 #include <tuple>
 
-#include "prometheus/detail/builder.h"
 #include "prometheus/counter.h"
 #include "prometheus/gauge.h"
 #include "prometheus/histogram.h"

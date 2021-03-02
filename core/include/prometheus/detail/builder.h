@@ -4,12 +4,13 @@
 #include <string>
 
 // IWYU pragma: private
+// IWYU pragma: no_include "prometheus/family.h"
 
 namespace prometheus {
 
 template <typename T>
-class Family;
-class Registry;
+class Family; // IWYU pragma: keep
+class Registry; // IWYU pragma: keep
 
 namespace detail {
 

@@ -1,12 +1,14 @@
 #include "prometheus/registry.h"
 
-#include <gmock/gmock.h>
+#include <gtest/gtest.h>
 
+#include <cstddef>
 #include <vector>
 
 #include "prometheus/counter.h"
 #include "prometheus/histogram.h"
 #include "prometheus/summary.h"
+#include "prometheus/gauge.h"
 
 namespace prometheus {
 namespace {
