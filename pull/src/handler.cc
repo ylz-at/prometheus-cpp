@@ -1,18 +1,25 @@
 #include "handler.h"
 
 #include <algorithm>
+#include <chrono>
 #include <cstring>
-
-#include "prometheus/counter.h"
-#include "prometheus/summary.h"
+#include <cstddef>
+#include <iterator>
+#include <string>
 
 #ifdef HAVE_ZLIB
+#include <zconf.h>
 #include <zlib.h>
 #endif
 
+#include "civetweb.h"
 #include "metrics_collector.h"
+#include "prometheus/counter.h"
+#include "prometheus/summary.h"
 #include "prometheus/serializer.h"
 #include "prometheus/text_serializer.h"
+#include "prometheus/detail/builder.h"
+#include "prometheus/metric_family.h"
 
 namespace prometheus {
 namespace detail {

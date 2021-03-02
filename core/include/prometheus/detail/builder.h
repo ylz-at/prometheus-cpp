@@ -3,6 +3,8 @@
 #include <map>
 #include <string>
 
+// IWYU pragma: private
+
 namespace prometheus {
 
 template <typename T>

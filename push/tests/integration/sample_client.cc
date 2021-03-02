@@ -1,10 +1,11 @@
 #include <prometheus/counter.h>
 #include <prometheus/gateway.h>
 #include <prometheus/registry.h>
+#include <prometheus/client_metric.h>
+#include <prometheus/family.h>
 
 #include <chrono>
 #include <iostream>
-#include <map>
 #include <memory>
 #include <string>
 #include <thread>
@@ -12,7 +13,6 @@
 #ifdef _WIN32
 #include <Winsock2.h>
 #else
-#include <sys/param.h>
 #include <unistd.h>
 #endif
 

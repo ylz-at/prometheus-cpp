@@ -3,13 +3,11 @@
 #include <functional>
 #include <memory>
 #include <string>
-#include <vector>
 
 #include "basic_auth.h"
+#include "CivetServer.h"
 #include "prometheus/collectable.h"
 #include "prometheus/registry.h"
-
-class CivetServer;
 
 namespace prometheus {
 namespace detail {

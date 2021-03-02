@@ -1,13 +1,14 @@
 #include "prometheus/exposer.h"
 
-#include <chrono>
+#include <algorithm>
 #include <string>
-#include <thread>
+#include <iterator>
+#include <utility>
 
 #include "CivetServer.h"
 #include "endpoint.h"
-#include "handler.h"
-#include "prometheus/client_metric.h"
+//#include "handler.h"
+//#include "prometheus/client_metric.h"
 #include "prometheus/detail/future_std.h"
 
 namespace prometheus {

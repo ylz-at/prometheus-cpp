@@ -7,6 +7,8 @@
 
 #include "prometheus/detail/core_export.h"
 
+// IWYU pragma: private
+
 namespace prometheus {
 namespace detail {
 
